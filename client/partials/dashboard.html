@@ -1,0 +1,14 @@
+<div ng-controller="UsersController">
+        <h2>Game</h2>
+        <h2>{{ errors.error }}</h2>
+
+        <h4>Add You Name to Play</h4>
+        <form>
+            <input type="text" ng-model="new_user.name" placeholder="name">
+            <input type="submit" ng-click="addUser()">
+        </form>
+    </div>
+    <div id="game">
+        <a href="#/play" class="btn btn-success" role="button">Lets Play</a>
+        <p>Click the button above to start a trivia game</p>
+    </div>

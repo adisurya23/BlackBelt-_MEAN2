@@ -1,0 +1,25 @@
+<div ng-controller="UsersController">
+    <h1>{{ errors.error }}</h1>
+
+    <h1>Add a New User</h1>
+    <form>
+        <input type="text" ng-model="new_user.name" placeholder="name">
+        <input type="submit" ng-click="addUser()">
+    </form>
+
+    <input type="text" ng-model="filter_name" placeholder="filter">
+    <table>
+        <thead>
+        <tr>
+            <th>User Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users | filter:filter_name" >
+            <td>{{user.name}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>

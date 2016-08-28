@@ -1,0 +1,36 @@
+<input type="text" ng-model="filter_name" value="Search">
+<h1>Play</h1>
+<div ng-controller = 'QuestionsController'>
+
+    <h3>Select your name:</h3>
+
+<form>
+    <select ng-model="new_play.name">
+        <options  ng-repeat="user in users | filter:filter_name">
+            {{user.name}}
+        </options>
+    </select>
+</form>
+
+
+
+
+    <div class="row">
+        <div class="col-md-8">
+           <ol>
+
+               <div ng-repeat = "question in questions" class="question" >
+                   <li>
+                   <p>{{question.question}}</p>
+                       <form>
+                           <input type="radio" name="group1" value="answer"> <p>{{question.answer}}</p>                             <input type="radio" name="group1" value="answer"><p>{{question.wrong1}}</p>                              <input type="radio" name="group1" value="answer"><p>{{question.wrong2}}</p>
+                       </form>
+                   </li>
+               </div>
+
+           </ol>
+
+        </div>
+        <button ng-click ="play()">Submit</button>
+    </div>
+</div>
